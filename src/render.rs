@@ -341,7 +341,7 @@ pub fn draw<F, M>(
     F: Deref<Target = FontTexture>,
 {
     if let Some(ref bindings) = text.bindings {
-        ctx.begin_default_pass(PassAction::Nothing);
+        //ctx.begin_default_pass(PassAction::Nothing);
         ctx.apply_pipeline(&system.pipeline);
         ctx.apply_bindings(bindings);
         ctx.apply_uniforms(&shader::Uniforms {
@@ -349,6 +349,6 @@ pub fn draw<F, M>(
             color,
         });
         ctx.draw(0, bindings.index_buffer.size() as i32 / 2, 1);
-        ctx.end_render_pass();
+        //ctx.end_render_pass();
     }
 }
